@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Display</title>
+</head>
+<body>
+    <div>
+        <input id="inputfield" type="text">
+        <button onclick="AddToArray()">Add</button>
+        <button onclick="DisplayArray()">Display</button>
+    </div>
+    <div id="display"></div>
+   
+    
+</body>
+<script>
+    const Array1=[]
+    function AddToArray(){
+        const newElementValue = document.getElementById("inputfield").value;
+        Array1.push(newElementValue);
+        document.getElementById("inputfield").value = "";
+    }
+    function DisplayArray() {
+        const displayArea = document.getElementById("display");
+        displayArea.innerHTML = ""; 
+        Array1.forEach(item => {
+            const p = document.createElement("p");
+            p.textContent = item;
+            displayArea.appendChild(p);
+        });
+    } 
+
+</script>
+</html>
